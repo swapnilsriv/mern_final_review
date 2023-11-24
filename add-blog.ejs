@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.html') %>
+<body>
+    
+    <%- include('./partials/nav.html') %>
+
+    <div class="hero">
+        <h1>Add a new blog</h1>
+        <div class="seperator"></div>
+
+        <form class="add-blogs" action="/blogs" method="POST">
+            <div class="mb-3">
+              <label for="blog-title" class="form-label">Title</label>
+              <input type="text" class="form-control" id="blog-title" name="title" required>
+            </div>
+            <div class="mb-3">
+              <label for="blog-snippet" class="form-label">Snippet</label>
+              <input type="text" class="form-control" id="blog-snippet" name="snippet" required>
+            </div>
+            <div class="mb-3">
+              <label for="blog-about" class="form-label">About</label>
+              <div class="form-floating">
+                <textarea class="form-control" id="blog-about" style="height: 100px" name="body" required></textarea>
+              </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

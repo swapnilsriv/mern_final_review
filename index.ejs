@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.html') %>
+<body>
+    
+    <%- include('./partials/nav.html') %>
+
+    <div class="hero-index">
+        <h1>The Blogs</h1>
+        <p>All new Blog posting site that will help you to post your thoughts online</p>
+
+        <div class="seperator"></div>
+
+        <div class="blog-list-heading">
+            <h2>Blogs</h2>
+        </div>
+        <div class="blog-list">
+            <% if(blogs.length > 0) { %>
+                <% blogs.forEach(blog => { %>
+                    <a class="single" href="/blogs/<%= blog._id %>">
+                        <h3 class="title"><%= blog.title %></h3>
+                        <p class="snippet"><%= blog.snippet %></p>
+                    </a>
+                <% }); %>
+            <% } else { %>
+                <p>no blogs to show</p>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>
